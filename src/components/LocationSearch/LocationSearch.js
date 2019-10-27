@@ -20,7 +20,8 @@ class LocationSearch extends Component {
                 lng: '',
                 street: '',
                 number: '',
-                complement: ''
+                complement: '',
+                value: ''
             },
             success: false
         };
@@ -79,11 +80,11 @@ class LocationSearch extends Component {
         });
     }
 
-    handleChange = street => {
+    handleChange = value => {
         this.setState(address => ({
             address: {
                 ...this.state.address,
-                street: street
+                value: value
             }
         }))
     };
@@ -103,6 +104,7 @@ class LocationSearch extends Component {
                     address: {
                         ...this.state.address,
                         street: `${route} ${sublocality_level_1} ${administrative_area_level_2} ${postal_code}`,
+                        value: `${route} ${sublocality_level_1} ${administrative_area_level_2} ${postal_code}`,
                         number: number
                     }
                 }));
@@ -110,7 +112,8 @@ class LocationSearch extends Component {
                 this.setState(address => ({
                     address: {
                         ...this.state.address,
-                        street: results[0].formatted_address
+                        street: results[0].formatted_address,
+                        value: results[0].formatted_address
                     }
                 }));
             }
@@ -149,11 +152,13 @@ class LocationSearch extends Component {
     handleSaveAddress = () => {
         const { address } = this.state;
 
-        cookie.save('address', address, { path: '/' });
+        if (address.street.length) {
+            cookie.save('address', address, { path: '/' });
 
-        this.props.dispatch(ZXActions.toggleAddress(address, true));
+            this.props.dispatch(ZXActions.toggleAddress(address, true));
 
-        this.getPOCSearch();
+            this.getPOCSearch();
+        }
     }
 
     render() {
@@ -167,7 +172,7 @@ class LocationSearch extends Component {
 
         return (
             <PlacesAutocomplete
-                value={this.state.address.street}
+                value={this.state.address.value}
                 onChange={this.handleChange}
                 onSelect={this.handleSelect}
                 searchOptions={searchOptions}
