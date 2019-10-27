@@ -1,13 +1,30 @@
+
 # ZX CHALLENGE
+
+  
 
 First, install the modules:
 
+  
+
 ```bash
+
 $ npm install
+
 ```
 
-After installing the modules, run the command to compile the files:
+  
+
+Run the command to compile the files:
+
+  
 
 ```bash
+
 $ npm start
+
 ```
+
+ After installing the modules and run command, visit the link below:
+ 
+[http://localhost:8080/](http://localhost:8080/)
