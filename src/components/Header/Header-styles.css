@@ -1,0 +1,47 @@
+.header {
+    background: #000;
+    padding: 12px 0;
+}
+
+.header-logo img {
+    height: 92px;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+.header-logo {
+    width: 70%;
+}
+
+.header-address {
+    width: 30%;
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+    text-align: right;
+}
+
+.header-address span {
+    display: block;
+    color: #FCD500;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-logo,
+    .header-address {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-address {
+        margin: 30px 0 15px;
+    }
+}
