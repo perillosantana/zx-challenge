@@ -1,0 +1,89 @@
+.footer {
+    background: #333;
+    padding: 12px 0;
+    margin-top: auto;
+}
+
+.footer-links-title h3 {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 900;
+    color: #888;
+    margin: 5px 0 20px;
+}
+
+.footer-links ul li a {
+    font-size: 14px;
+    color: #ececec;
+    text-decoration: none;
+    margin: 0 0 10px;
+    display: inline-block;
+}
+
+.footer-social-footer {
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer-row > div {
+    width: 50%;
+}
+
+.footer-social-footer > div {
+    margin: 0 10px;
+}
+
+.footer-social-footer > div:first-child {
+}
+
+div.footer-copyright {
+    border-top: 1px solid #8888884d;
+    font-size: 14px;
+    color: #888;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+div.footer-copyright span {
+    position: absolute;
+    top: calc(50%);
+    right: 0;
+}
+
+.footer-apps {
+    margin-top: 30px;
+}
+
+.footer-apps a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-apps .play-store {
+    width: 135px;
+    height: auto;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-row > div {
+        width: 100%;
+    }
+
+    .footer-social-footer {
+        flex-flow: row;
+        margin-top: 20px;
+    }
+
+    div.footer-copyright span {
+        position: static;
+    }
+}
